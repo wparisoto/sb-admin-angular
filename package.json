@@ -1,15 +1,13 @@
 {
-  "name": "SB-Admin-BS4-Angular-7",
+  "name": "sb-admin-angular",
   "version": "7.0.0",
   "license": "Apache",
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build --prod",
     "postinstall": "ng build --aot --prod",
-    "gitbuild": "ng build --prod --base-href /start-angular/SB-Admin-BS4-Angular-7/master/dist/",
+    "build": "ng build",
     "test": "ng test",
-    "test-ci": "TEST_CI=true ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
