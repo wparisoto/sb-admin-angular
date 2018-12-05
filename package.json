@@ -31,7 +31,13 @@
     "ng2-charts": "1.6.0",
     "rxjs": "6.3.3",
     "yarn": "1.12.1",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "body-parser": "~1.4.3",
+    "path": "^0.12.7",
+    "method-override": "~2.1.1",
+    "mongoose": "~3.8.13",
+    "morgan": "~1.1.1",
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "0.10.4",
