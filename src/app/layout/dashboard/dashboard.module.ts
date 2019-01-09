@@ -7,9 +7,12 @@ import { DashboardComponent } from './dashboard.component';
 import {
     TimelineComponent,
     NotificationComponent,
-    ChatComponent
+    ChatComponent,
+
 } from './components';
 import { StatModule } from '../../shared';
+import { InputComponent } from '../bs-component/components';
+import { BsComponentModule } from '../bs-component/bs-component.module';
 
 @NgModule({
     imports: [

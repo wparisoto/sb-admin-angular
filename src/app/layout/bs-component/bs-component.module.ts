@@ -18,9 +18,9 @@ import {
     TabsComponent,
     RatingComponent,
     TooltipComponent,
-    TimepickerComponent
+    TimepickerComponent,
+    InputComponent
 } from './components';
-import { PageHeaderModule } from '../../shared';
 
 @NgModule({
     imports: [
@@ -29,7 +29,8 @@ import { PageHeaderModule } from '../../shared';
         FormsModule,
         ReactiveFormsModule,
         NgbModule,
-        PageHeaderModule
+        // PageHeaderModule,
+        InputComponent
     ],
     declarations: [
         BsComponentComponent,
@@ -45,7 +46,8 @@ import { PageHeaderModule } from '../../shared';
         TabsComponent,
         RatingComponent,
         TooltipComponent,
-        TimepickerComponent
+        TimepickerComponent,
+        InputComponent
     ]
 })
 export class BsComponentModule {}
