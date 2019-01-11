@@ -29,8 +29,6 @@ import {
         FormsModule,
         ReactiveFormsModule,
         NgbModule,
-        // PageHeaderModule,
-        InputComponent
     ],
     declarations: [
         BsComponentComponent,

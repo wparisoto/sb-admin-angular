@@ -10,9 +10,8 @@ import {
     ChatComponent,
 
 } from './components';
-import { StatModule } from '../../shared';
 import { InputComponent } from '../bs-component/components';
-import { BsComponentModule } from '../bs-component/bs-component.module';
+import { StatModule } from 'src/app/shared';
 
 @NgModule({
     imports: [
@@ -26,7 +25,8 @@ import { BsComponentModule } from '../bs-component/bs-component.module';
         DashboardComponent,
         TimelineComponent,
         NotificationComponent,
-        ChatComponent
+        ChatComponent,
+        InputComponent
     ]
 })
 export class DashboardModule {}

@@ -12,10 +12,10 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
-    InputComponent,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    InputComponent,
   ]
 })
 export class SharedModule {
