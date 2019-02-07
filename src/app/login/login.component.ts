@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
+import { NotificationService } from '../shared/messages/notifications.service';
+import { LoginService } from '../shared/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,16 +12,38 @@ import { routerTransition } from '../router.animations';
   animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
-  constructor(private translate: TranslateService, public router: Router) {
-    this.translate.addLangs(['en', 'fr', 'ur', 'es', 'it', 'fa', 'de', 'zh-CHS']);
-    this.translate.setDefaultLang('en');
-    const browserLang = this.translate.getBrowserLang();
-    this.translate.use(browserLang.match(/en|fr|ur|es|it|fa|de|zh-CHS/) ? browserLang : 'en');
+  loginForm: FormGroup;
+  navigateTo: string;
+
+  constructor(
+    private fb: FormBuilder,
+    private loginService: LoginService,
+    private notificationService: NotificationService,
+    private activatedRoute: ActivatedRoute,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: this.fb.control('', [Validators.required, Validators.email]),
+      password: this.fb.control('', [Validators.required])
+    });
+
+    this.navigateTo = this.activatedRoute.snapshot.params['to'] || btoa('/');
   }
 
-  ngOnInit() {}
+  login() {
+    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
+    .subscribe(token => {
+      console.log(token);
+    });
 
-  onLoggedin() {
-    localStorage.setItem('isLoggedin', 'true');
+    // .subscribe(
+    //   user => this.notificationService.notify(`Bem-Vindo, ${user.name}`),
+    //   response => this.notificationService.notify(response.error.message),
+    //   () => {
+    //     this.router.navigate([atob(this.navigateTo)]);
+    //   }
+    // );
   }
 }

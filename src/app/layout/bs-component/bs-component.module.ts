@@ -40,6 +40,7 @@ import {
     TooltipComponent,
     TimepickerComponent,
     InputComponent
-  ]
+  ],
+  exports: [InputComponent]
 })
 export class BsComponentModule {}

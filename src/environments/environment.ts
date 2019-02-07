@@ -22,5 +22,5 @@
 
 export const environment = {
   production: false,
-  api: 'https://localhost:3001'
+  api: 'http://locahost:5000' // 'https://spring-boot-jwt.herokuapp.com:443' // 'https://localhost:3001'
 };

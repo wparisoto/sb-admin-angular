@@ -1,53 +1,82 @@
-<!-- <div class="login-page" [@routerTransition]>
+<div class="login-page">
   <div class="row justify-content-md-center">
     <div class="col-md-4">
       <img src="assets/images/logo.png" width="150px" class="user-avatar" />
-      <h1>SB Admin BS4 Angular7</h1>
-      <form role="form">
+      <h1>Login</h1>
+
+      <form [formGroup]="loginForm">
         <div class="form-content">
+
           <div class="form-group">
-            <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
+            <app-input-container [showTip]="false">
+              <input type="text" value="admin" formControlName="email" class="form-control" placeholder="Email">
+              <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </app-input-container>
+
           </div>
 
           <div class="form-group">
-            <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
+            <app-input-container [showTip]="false">
+              <input type="password" value="password" formControlName="password" class="form-control" placeholder="Password">
+              <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </app-input-container>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-xs-offset-8 col-xs-4">
+            <button
+              type="submit"
+              (click)="login()"
+
+              class="btn btn-primary btn-block btn-flat">
+                Entrar
+            </button>
+            <!-- [disabled]="loginForm.invalid"  -->
+
           </div>
         </div>
-        <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()">{{ 'Log in' | translate }}</a>
+
+        <!-- <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()">{{ 'Log in' | translate }}</a>
         &nbsp;
-        <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
+        <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a> -->
+
+
       </form>
     </div>
   </div>
-</div> -->
-teste
+</div>
 
 
-<!-- <section class="content login-content" style="margin: 10% auto">
+<!--
+<section class="content login-content" style="margin: 10% auto">
   <div class="login-logo">
     <b>MEAT</b> | Login
   </div>
   <div class="col-xs-12 col-sm-offset-3 col-sm-6 login-box-body">
     <p class="login-box-msg">Por favor, efetue o login para continuar</p>
 
-    <form [formGroup]="loginForm">
+     <form [formGroup]="loginForm">
+<form>
 
-      <app-input-container [showTip]="false">
-        <input type="text" formControlName="email" class="form-control" placeholder="Email">
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-      </app-input-container>
+  <app-input-container [showTip]="false">
+    <input type="text" formControlName="email" class="form-control" placeholder="Email">
+    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+  </app-input-container>
 
-      <app-input-container [showTip]="false">
-        <input type="password" formControlName="password" class="form-control" placeholder="Password">
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </app-input-container>
+  <app-input-container [showTip]="false">
+    <input type="password" formControlName="password" class="form-control" placeholder="Password">
+    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+  </app-input-container>
 
-      <div class="row">
+  <div class="row">
 
-        <div class="col-xs-offset-8 col-xs-4">
-          <button type="submit" (click)="login()" [disabled]="loginForm.invalid" class="btn btn-primary btn-block btn-flat">Entrar</button>
-        </div>
-      </div>
-    </form>
+    <div class="col-xs-offset-8 col-xs-4">
+      <button type="submit" (click)="login()" [disabled]="loginForm.invalid" class="btn btn-primary btn-block btn-flat">Entrar</button>
+    </div>
   </div>
+</form>
+</div>
 </section> -->
