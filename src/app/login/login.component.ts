@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
     .subscribe(token => {
       console.log(token);
+      //this.router.navigate([atob(this.navigateTo)]);
+      this.router.navigate(['/dashboard']);
     });
 
     // .subscribe(

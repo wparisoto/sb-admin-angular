@@ -20,6 +20,14 @@ export class LoginService {
   }
 
   login(email: string, password: string) {
+    const body = JSON.stringify({ username: email, password: password });
+    return this.http.post(`http://localhost:5000/login`, body)
+    .pipe(
+      tap(token => {
+        console.log(token);
+      })
+    );
+
     // const url = `${MEAT_API}/login`;
     // const url = `http://localhost:5000/login`;
 
@@ -53,14 +61,7 @@ export class LoginService {
 
     // let headers = new HttpHeaders();
     // headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-    const body = JSON.stringify({ username: email, password: password });
 
-    return this.http.post(`http://localhost:5000/login`, body)
-    .pipe(
-      tap(token => {
-        console.log(token);
-      })
-    );
     // .subscribe(
     //   data => {
     //     console.log(data);
